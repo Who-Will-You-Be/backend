@@ -1,6 +1,2 @@
-[build]
-builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
-
 [deploy]
-startCommand = "java -jar app.jar"
+startCommand = "java -jar build/libs/DATA_ANALYSIS-BACKEND-0.0.1-SNAPSHOT.jar"
