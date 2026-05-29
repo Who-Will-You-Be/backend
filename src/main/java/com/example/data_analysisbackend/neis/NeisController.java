@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
+
 @RestController
 @RequestMapping("/api/neis")
 public class NeisController {
@@ -29,7 +31,7 @@ public class NeisController {
 
         String body = RestClient.create()
                 .get()
-                .uri(url)
+                .uri(URI.create(url))
                 .retrieve()
                 .body(String.class);
 
