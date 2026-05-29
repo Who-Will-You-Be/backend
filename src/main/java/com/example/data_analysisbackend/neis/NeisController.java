@@ -22,7 +22,7 @@ public class NeisController {
 
         String query = request.getQueryString();
         String url = UriComponentsBuilder
-                .fromHttpUrl(NEIS_BASE + "/hub/" + endpoint)
+                .fromUriString(NEIS_BASE + "/hub/" + endpoint)
                 .query(query)
                 .build(true)
                 .toUriString();
