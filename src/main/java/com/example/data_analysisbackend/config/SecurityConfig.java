@@ -57,6 +57,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/recommend/**").permitAll()
                 .requestMatchers("/api/neis/**").permitAll()
                 .requestMatchers("/h2-console", "/h2-console/**").permitAll()
+                .requestMatchers("/health").permitAll()
                 .requestMatchers("/error").permitAll()
                 .anyRequest().authenticated()
             )
