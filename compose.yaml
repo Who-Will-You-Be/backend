@@ -2,10 +2,10 @@ services:
   mysql:
     image: 'mysql:latest'
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=${COMPOSE_MYSQL_DATABASE}'
+      - 'MYSQL_PASSWORD=${COMPOSE_MYSQL_PASSWORD}'
+      - 'MYSQL_ROOT_PASSWORD=${COMPOSE_MYSQL_ROOT_PASSWORD}'
+      - 'MYSQL_USER=${COMPOSE_MYSQL_USER}'
     ports:
       - '3306:3306'
   sqlserver:
@@ -13,6 +13,6 @@ services:
     environment:
       - 'ACCEPT_EULA=yes'
       - 'MSSQL_PID=express'
-      - 'MSSQL_SA_PASSWORD=verYs3cret'
+      - 'MSSQL_SA_PASSWORD=${COMPOSE_MSSQL_SA_PASSWORD}'
     ports:
       - '1433'
